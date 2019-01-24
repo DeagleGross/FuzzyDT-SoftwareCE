@@ -5,8 +5,8 @@ Using C#.
 
 
 ------
-FuzzyTreeCourse - Solution with console interface
-FuzzyTreeLib - Library with logic
+* FuzzyTreeCourse - Solution with console interface
+* FuzzyTreeLib - Library with logic
 
 # TODO:
 - fix commentaries and style in FuzzyTreeLib
