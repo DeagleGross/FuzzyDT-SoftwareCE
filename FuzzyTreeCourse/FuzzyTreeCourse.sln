@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuzzyTreeCourse", "FuzzyTreeCourse\FuzzyTreeCourse.csproj", "{58DA72A4-10E4-4425-81C7-F8655E919BF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuzzyTreeLib", "FuzzyTreeLib\FuzzyTreeLib.csproj", "{9821FFC5-8C42-42AE-8BB7-71F475E9D542}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{58DA72A4-10E4-4425-81C7-F8655E919BF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58DA72A4-10E4-4425-81C7-F8655E919BF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58DA72A4-10E4-4425-81C7-F8655E919BF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58DA72A4-10E4-4425-81C7-F8655E919BF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9821FFC5-8C42-42AE-8BB7-71F475E9D542}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9821FFC5-8C42-42AE-8BB7-71F475E9D542}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9821FFC5-8C42-42AE-8BB7-71F475E9D542}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9821FFC5-8C42-42AE-8BB7-71F475E9D542}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F2AB8C54-1DCE-49F8-BDD9-CC0F29CE3356}
+	EndGlobalSection
+EndGlobal
