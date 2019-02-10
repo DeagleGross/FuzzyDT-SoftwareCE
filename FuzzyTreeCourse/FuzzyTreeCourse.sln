@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuzzyTreeCourse", "FuzzyTre
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuzzyTreeLib", "FuzzyTreeLib\FuzzyTreeLib.csproj", "{9821FFC5-8C42-42AE-8BB7-71F475E9D542}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuzzyTreeWPF", "WPFApplication\FuzzyTreeWPF.csproj", "{B0E29495-B599-4816-88B2-5BFA28ACF0E2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{9821FFC5-8C42-42AE-8BB7-71F475E9D542}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9821FFC5-8C42-42AE-8BB7-71F475E9D542}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9821FFC5-8C42-42AE-8BB7-71F475E9D542}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0E29495-B599-4816-88B2-5BFA28ACF0E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0E29495-B599-4816-88B2-5BFA28ACF0E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0E29495-B599-4816-88B2-5BFA28ACF0E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0E29495-B599-4816-88B2-5BFA28ACF0E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

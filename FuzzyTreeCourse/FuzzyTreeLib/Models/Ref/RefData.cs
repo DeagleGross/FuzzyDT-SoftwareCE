@@ -28,7 +28,7 @@ namespace FuzzyTreeLib.Models
         /// Constructor setting number of decimals after ","
         /// </summary>
         /// <param name="numberOfDecimals">number of decimals after ","</param>
-        public RefData(int numberOfDecimals)
+        public RefData(int numberOfDecimals = 2)
         {
             RefTable = new List<RefAtribut>();
             this.NumberOfDecimals = numberOfDecimals;

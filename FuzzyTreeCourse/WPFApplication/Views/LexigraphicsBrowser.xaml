@@ -1,0 +1,45 @@
+﻿<Window x:Class="FuzzyTreeWPF.Views.LexigraphicsBrowser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FuzzyTreeWPF.Views"
+        xmlns:lexsInput="clr-namespace:FuzzyTreeWPF.Views.SubViews"
+        mc:Ignorable="d"
+        Title="LexigraphicsBrowser" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <StackPanel x:Name="Atribut_1_Stack">
+                <Grid MinWidth="250"  MaxWidth="500" HorizontalAlignment="Left">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.25*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.25*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <ComboBox Name="AmountOfAtributsPicker" 
+                              Grid.Row="0" Grid.ColumnSpan="2">
+                        <TextBlock>3</TextBlock>
+                        <TextBlock>4</TextBlock>
+                        <TextBlock>5</TextBlock>
+                        <TextBlock>6</TextBlock>
+                        <TextBlock>7</TextBlock>
+                        <TextBlock>8</TextBlock>
+                        <TextBlock>9</TextBlock>
+                    </ComboBox>
+
+                    <Button Content="hello 1" Grid.Row="1" Grid.ColumnSpan="2"/>
+                </Grid>
+            </StackPanel>
+
+            <lexsInput:LexigraphVarInputPage Grid.Row="2" Grid.ColumnSpan="2" MaxWidth="200" MaxHeight="200">
+
+            </lexsInput:LexigraphVarInputPage>
+        </StackPanel>
+    </Grid>
+</Window>
+
