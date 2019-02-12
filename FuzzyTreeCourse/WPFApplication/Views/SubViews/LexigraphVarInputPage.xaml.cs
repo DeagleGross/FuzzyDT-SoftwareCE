@@ -20,6 +20,16 @@ namespace FuzzyTreeWPF.Views.SubViews
     /// </summary>
     public partial class LexigraphVarInputPage : UserControl
     {
+        List<SubViews.SubAtribut> subAtributs;
+
+        public static readonly DependencyProperty CaptionProperty =
+            DependencyProperty.Register("Caption", typeof(string), typeof(LexigraphVarInputPage), new PropertyMetadata(null));
+        public string Caption
+        {
+            get { return (string)GetValue(CaptionProperty); }
+            set { SetValue(CaptionProperty, value); }
+        }   
+
         public LexigraphVarInputPage()
         {
             InitializeComponent();

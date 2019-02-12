@@ -23,5 +23,11 @@ namespace FuzzyTreeWPF.Views
         {
             InitializeComponent();
         }
+
+        private void CountResult(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(this.Atribut1.SubAtribut1.ToString());
+            MessageBox.Show("here will be shown result");
+        }
     }
 }

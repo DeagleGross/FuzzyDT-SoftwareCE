@@ -4,42 +4,55 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FuzzyTreeWPF.Views"
-        xmlns:lexsInput="clr-namespace:FuzzyTreeWPF.Views.SubViews"
+        xmlns:subViews="clr-namespace:FuzzyTreeWPF.Views.SubViews"
         mc:Ignorable="d"
-        Title="LexigraphicsBrowser" Height="450" Width="800">
-    <Grid>
-        <StackPanel>
-            <StackPanel x:Name="Atribut_1_Stack">
-                <Grid MinWidth="250"  MaxWidth="500" HorizontalAlignment="Left">
-                    <Grid.RowDefinitions>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="0.25*"></ColumnDefinition>
-                        <ColumnDefinition Width="0.25*"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
+        Title="LexigraphicsBrowser" Height="600" Width="800">
+    <ScrollViewer>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
-                    <ComboBox Name="AmountOfAtributsPicker" 
-                              Grid.Row="0" Grid.ColumnSpan="2">
-                        <TextBlock>3</TextBlock>
-                        <TextBlock>4</TextBlock>
-                        <TextBlock>5</TextBlock>
-                        <TextBlock>6</TextBlock>
-                        <TextBlock>7</TextBlock>
-                        <TextBlock>8</TextBlock>
-                        <TextBlock>9</TextBlock>
-                    </ComboBox>
+            <subViews:LexigraphVarInputPage 
+                Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="5, 5, 5, 5"
+                x:Name="Atribut1"  Caption="Количество людей в команде"/>
 
-                    <Button Content="hello 1" Grid.Row="1" Grid.ColumnSpan="2"/>
-                </Grid>
-            </StackPanel>
+            <subViews:LexigraphVarInputPage 
+                Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="5, 5, 5, 5"
+            />
 
-            <lexsInput:LexigraphVarInputPage Grid.Row="2" Grid.ColumnSpan="2" MaxWidth="200" MaxHeight="200">
+            <subViews:LexigraphVarInputPage 
+                Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="5, 5, 5, 5" 
+            />
+            <subViews:LexigraphVarInputPage 
+                Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="5, 5, 5, 5"
+            />
 
-            </lexsInput:LexigraphVarInputPage>
-        </StackPanel>
-    </Grid>
+            <subViews:LexigraphVarInputPage
+                Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="5, 5, 5, 5"
+            />
+
+            <subViews:LexigraphVarInputPage
+                Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Margin="5, 5, 5, 5"
+            />
+
+            <subViews:LexigraphVarInputPage 
+                Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Margin="5, 5, 5, 5"
+            />
+
+            <Button Click="CountResult" Grid.Row="7" Grid.Column="0" Content="Find result" FontSize="25"/>
+        </Grid>
+    </ScrollViewer>
 </Window>
 
