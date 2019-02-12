@@ -7,7 +7,8 @@ Using C#.
 ------
 * FuzzyTreeCourse - Solution with console interface
 * FuzzyTreeLib - Library with logic
+* WPFApplication - Solution with WPF standart application
 
 ##### TODO:
 - fix commentaries and style in FuzzyTreeLib
-- create visual application for inputs
+- do normal design for WPF_App
