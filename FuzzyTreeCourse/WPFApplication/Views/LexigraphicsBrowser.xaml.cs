@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using FuzzyTreeLib.Models.Counters;
 
 namespace FuzzyTreeWPF.Views
 {
@@ -26,8 +27,9 @@ namespace FuzzyTreeWPF.Views
 
         private void CountResult(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(this.Atribut1.SubAtribut1.ToString());
-            MessageBox.Show("here will be shown result");
+            MainController mainController = (MainController)Application.Current.Resources["mainController"];
+
+            MessageBox.Show(mainController.ToString());
         }
     }
 }

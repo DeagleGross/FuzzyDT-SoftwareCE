@@ -83,7 +83,6 @@ namespace FuzzyTreeLib.Models
                 name, dataDoubles, lexigraphics
             );
 
-
             // ПРОЖИВАНИЕ В РЕГИОНЕ
             name = "Проживание в регионе";
             dataDoubles = new List<double>() { 0, 10, 15, 20, 35, 40, 40 };
@@ -96,8 +95,6 @@ namespace FuzzyTreeLib.Models
             controllerMain.LoadAtributData_and_RefAtributData(
                 name, dataDoubles, lexigraphics
             );
-
-            
 
             // РЕЙТИНГ
             controllerMain.LoadAtributThroughDataLoader(

@@ -37,6 +37,10 @@ namespace FuzzyTreeLib.Models.Ref
          */
         public string GetName => Name;
 
+        /// <summary>
+        /// Returns array of 4 elems in such order: _left, _from, _to, _right
+        /// </summary>
+        /// <returns></returns>
         public double[] GetReferenceFunctionPoints()
         {
             double[] ret = new double[4];

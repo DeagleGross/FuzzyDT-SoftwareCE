@@ -55,7 +55,7 @@
                 Visibility="Collapsed"
             />
 
-            <Button Click="CountResult" Grid.Row="7" Grid.Column="0" Content="Find result" FontSize="25"/>
+            <Button Click="CountResult" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Content="Find result" FontSize="25"/>
         </Grid>
     </ScrollViewer>
 </Window>

@@ -21,6 +21,8 @@
             <ColumnDefinition Width="0.02*"></ColumnDefinition>
             <ColumnDefinition Width="0.1*"></ColumnDefinition>
             <ColumnDefinition Width="0.2*"></ColumnDefinition>
+            <ColumnDefinition Width="0.02*"></ColumnDefinition>
+            <ColumnDefinition Width="0.05*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
         <!-- Name of SUB ATRIBUT -->
@@ -33,34 +35,34 @@
 
         <!-- double FROM -->
         <TextBlock Grid.Row="2" Grid.Column="1" 
-                   Text="Rising FROM" FontSize="16"
+                   Text="LEFT value" FontSize="16"
                    TextAlignment="Center" Background="Bisque"/>
         <TextBox Grid.Row="2" Grid.Column="2" Margin="5,5,5,5"
-                 Text="{Binding From}" FontSize="16" TextAlignment="Center"
+                 Text="{Binding Left}" FontSize="16" TextAlignment="Center"
         />
 
         <!-- double LEFT -->
         <TextBlock Grid.Row="3" Grid.Column="1" 
-                   Text="LEFT value" FontSize="16"
+                   Text="Is 1.0 reference FROM" FontSize="16"
                    TextAlignment="Center" Background="Bisque"/>
         <TextBox Grid.Row="3" Grid.Column="2" Margin="5,5,5,5"
-                 Text="{Binding Left}" FontSize="16" TextAlignment="Center"
+                 Text="{Binding From}" FontSize="16" TextAlignment="Center"
         />
 
         <!-- double RIGHT -->
         <TextBlock Grid.Row="4" Grid.Column="1" 
-                   Text="RIGHT value " FontSize="16"
+                   Text="is 1.0 reference TO" FontSize="16"
                    TextAlignment="Center" Background="Bisque"/>
         <TextBox Grid.Row="4" Grid.Column="2" Margin="5,5,5,5"
-                 Text="{Binding Right}" FontSize="16" TextAlignment="Center"
+                 Text="{Binding To}" FontSize="16" TextAlignment="Center"
         />
 
         <!-- double TO -->
         <TextBlock Grid.Row="5" Grid.Column="1" 
-                   Text="falling TO" FontSize="16"
+                   Text="RIGHT value" FontSize="16"
                    TextAlignment="Center" Background="Bisque"/>
         <TextBox Grid.Row="5" Grid.Column="2" Margin="5,5,5,5"
-                 Text="{Binding To}" FontSize="16" TextAlignment="Center"
+                 Text="{Binding Right}" FontSize="16" TextAlignment="Center"
         />
     </Grid>
 </UserControl>

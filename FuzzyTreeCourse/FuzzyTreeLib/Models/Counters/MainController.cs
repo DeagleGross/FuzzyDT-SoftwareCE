@@ -11,9 +11,24 @@ namespace FuzzyTreeLib.Models.Counters
 {
     public class MainController
     {
+        /// <summary>
+        /// dataset controller
+        /// </summary>
         public Data Data { get; set; }
+
+        /// <summary>
+        /// reference data - refAtributs and refLexigraphics controller
+        /// </summary>
         public RefData RefData { get; set; }
+        
+        /// <summary>
+        /// sets loading of data
+        /// </summary>
         public DataLoader DataLoader { get; set; }
+
+        /// <summary>
+        /// tree controller - answer counter
+        /// </summary>
         public TreeController TreeController { get; set; }
 
         /// <summary>
@@ -159,8 +174,16 @@ namespace FuzzyTreeLib.Models.Counters
             // printing resulting values to see if are they normalized correctly
             str += "Result values::\n";
             int k = 0;
-            foreach (var doubleVal in Data.GetResultDoubles)
-                str += "\t" + k++ + ") " + doubleVal + ";\n";
+
+            try
+            {
+                foreach (var doubleVal in Data.GetResultDoubles)
+                    str += "\t" + k++ + ") " + doubleVal + ";\n";
+            }
+            catch (Exception e)
+            {
+                return "Data result values are not initialized.";
+            }
 
             str += this.RefData.ToString();
 
