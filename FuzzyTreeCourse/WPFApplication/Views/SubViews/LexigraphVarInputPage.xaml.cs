@@ -28,11 +28,44 @@ namespace FuzzyTreeWPF.Views.SubViews
         {
             get { return (string)GetValue(CaptionProperty); }
             set { SetValue(CaptionProperty, value); }
-        }   
+        }
+
+        /// <summary>
+        /// Adds all UI elements "SubAtribut" to list
+        /// </summary>
+        private void FormSubAtributsUIelemsList()
+        {
+            subAtributs = new List<SubAtribut>
+            {
+                SubAtribut1,
+                SubAtribut2,
+                SubAtribut3,
+                SubAtribut4,
+                SubAtribut5,
+                SubAtribut6,
+                SubAtribut7,
+                SubAtribut8,
+                SubAtribut9
+            };
+        }
 
         public LexigraphVarInputPage()
         {
             InitializeComponent();
+        }
+
+        private void AmountOfAtributsPicker_OnDropDownClosed(object sender, EventArgs e)
+        {
+            if (subAtributs == null)                
+                FormSubAtributsUIelemsList();
+
+            int indexSelected = CmbBoxAtributsQuantity.SelectedIndex + 3;
+
+            for (int i = 0; i < indexSelected; i++)
+                subAtributs[i].Visibility = Visibility.Visible;
+                
+            for (int i = indexSelected; i < subAtributs.Count; i++)
+                subAtributs[i].Visibility = Visibility.Collapsed;
         }
     }
 }
