@@ -12,3 +12,5 @@ Using C#.
 ##### TODO:
 - fix commentaries and style in FuzzyTreeLib
 - do normal design for WPF_App
+- finish research with factors for software cost estimation
+- create page to show fuzzy_tree that was constructed by algorithm
