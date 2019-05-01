@@ -56,6 +56,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Helpers\ResourcePicker.cs" />
+    <Compile Include="Views\InstructionsPage.xaml.cs">
+      <DependentUpon>InstructionsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\LexigraphicsBrowser.xaml.cs">
       <DependentUpon>LexigraphicsBrowser.xaml</DependentUpon>
     </Compile>
@@ -65,6 +69,10 @@
     <Compile Include="Views\SubViews\SubAtribut.xaml.cs">
       <DependentUpon>SubAtribut.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\InstructionsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -116,9 +124,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\FuzzyTreeLib\FuzzyTreeLib.csproj">
       <Project>{9821FFC5-8C42-42AE-8BB7-71F475E9D542}</Project>

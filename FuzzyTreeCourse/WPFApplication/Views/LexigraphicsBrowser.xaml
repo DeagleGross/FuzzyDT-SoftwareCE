@@ -18,6 +18,7 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -26,32 +27,45 @@
 
             <subViews:LexigraphVarInputPage 
                 Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="5, 5, 5, 5"
-                x:Name="Atribut1"  Caption="Количество людей в команде"/>
+                x:Name="Atribut1"  Caption="Количество людей в команде"
+            />
 
             <subViews:LexigraphVarInputPage 
                 Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="5, 5, 5, 5"
+                x:Name="Atribut2"  Caption="Атрибут второй"
             />
 
             <subViews:LexigraphVarInputPage 
-                Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="5, 5, 5, 5" 
+                Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="5, 5, 5, 5"
+                x:Name="Atribut3"  Caption="Атрибут третий"
+                Visibility="Collapsed"
             />
+
             <subViews:LexigraphVarInputPage 
                 Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="5, 5, 5, 5"
+                Visibility="Collapsed"
             />
 
             <subViews:LexigraphVarInputPage
                 Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="5, 5, 5, 5"
+                Visibility="Collapsed"
             />
 
             <subViews:LexigraphVarInputPage
                 Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Margin="5, 5, 5, 5"
+                Visibility="Collapsed"
             />
 
             <subViews:LexigraphVarInputPage 
                 Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Margin="5, 5, 5, 5"
+                Visibility="Collapsed"
             />
 
-            <Button Click="CountResult" Grid.Row="7" Grid.Column="0" Content="Find result" FontSize="25"/>
+            <Button Grid.Row="7" Grid.Column="0" Margin="5, 5, 5, 5"
+                    Click="FillSampleValues" Content="Fill with sample input values" FontSize="25"/>
+
+            <Button Grid.Row="7" Grid.Column="1" Margin="5, 5, 5, 5"
+                    Click="CountResult" Content="Find result" FontSize="25"/>
         </Grid>
     </ScrollViewer>
 </Window>
