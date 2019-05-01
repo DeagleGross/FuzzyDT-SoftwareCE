@@ -26,7 +26,7 @@ namespace FuzzyTreeLib.Models
         /// <summary>
         /// Constructor initializing Name
         /// </summary>
-        /// <param name="Name"></param>
+        /// <param name="Name"></param> 
         public Atribut(string Name)
         {
             this.Name = Name;

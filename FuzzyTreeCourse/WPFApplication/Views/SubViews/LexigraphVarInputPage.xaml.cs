@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using FuzzyTreeLib.Models.Counters;
+using FuzzyTreeLib.Models.Ref;
 
 namespace FuzzyTreeWPF.Views.SubViews
 {
@@ -26,8 +28,16 @@ namespace FuzzyTreeWPF.Views.SubViews
             DependencyProperty.Register("Caption", typeof(string), typeof(LexigraphVarInputPage), new PropertyMetadata(null));
         public string Caption
         {
-            get { return (string)GetValue(CaptionProperty); }
-            set { SetValue(CaptionProperty, value); }
+            get => (string)GetValue(CaptionProperty);
+            set => SetValue(CaptionProperty, value);
+        }
+
+        public static readonly DependencyProperty InputAtributValueProperty =
+            DependencyProperty.Register("InputAtributValue", typeof(double), typeof(LexigraphVarInputPage), new PropertyMetadata(null));
+        public double InputAtributValue
+        {
+            get => (double)GetValue(InputAtributValueProperty);
+            set => SetValue(InputAtributValueProperty, value);
         }
 
         /// <summary>
@@ -56,7 +66,7 @@ namespace FuzzyTreeWPF.Views.SubViews
 
         private void AmountOfAtributsPicker_OnDropDownClosed(object sender, EventArgs e)
         {
-            if (subAtributs == null)                
+            if (subAtributs == null || subAtributs.Count == 0)                
                 FormSubAtributsUIelemsList();
 
             int indexSelected = CmbBoxAtributsQuantity.SelectedIndex + 3;
@@ -66,6 +76,34 @@ namespace FuzzyTreeWPF.Views.SubViews
                 
             for (int i = indexSelected; i < subAtributs.Count; i++)
                 subAtributs[i].Visibility = Visibility.Collapsed;
+        }
+
+        /// <summary>
+        /// Setups mainController RefData with inputted params
+        /// </summary>
+        /// <param name="mainController"> mainController to be filled with reference data </param>
+        public void FillInputData(MainController mainController)
+        {
+            /* TODO fill list<RefLexigraphic> and pass it to refData ! */
+
+            // check on creation
+            if (subAtributs == null || subAtributs.Count == 0)
+                FormSubAtributsUIelemsList();
+
+            List<RefLexigraphic> refLexigraphics = new List<RefLexigraphic>();
+
+            foreach (var subAtr in this.subAtributs)
+            {
+                if (subAtr.IsVisible)
+                {
+                    refLexigraphics.Add(new RefLexigraphic
+                    (
+                        subAtr.AtributName, subAtr.Left, subAtr.From, subAtr.To, subAtr.Right
+                    ));
+                }
+            }
+
+            mainController.RefData.LoadRefAtribut(this.Caption, refLexigraphics);
         }
     }
 }

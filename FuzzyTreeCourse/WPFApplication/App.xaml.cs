@@ -10,6 +10,7 @@ namespace FuzzyTreeWPF
     /// </summary>
     public partial class App : Application
     {
+        private const int NumberOfDecimals = 2;
         private MainController mainController;
 
         /// <summary>
@@ -20,18 +21,19 @@ namespace FuzzyTreeWPF
             get
             {
                 if (mainController == null)
-                    mainController = new MainController();
+                    mainController = new MainController(NumberOfDecimals);
                 return mainController;
             }
         }
 
         public App()
         {
+            this.Resources.Add("constNumberOfDecimals", NumberOfDecimals);
             this.Resources.Add("mainController", MainController);
-            this.Resources.Add("mainDataLoader", MainController.DataLoader);
-            this.Resources.Add("mainRefData", MainController.RefData);
-            this.Resources.Add("mainData", MainController.Data);
-            this.Resources.Add("mainTreeController", MainController.TreeController);
+            this.Resources.Add("mainDataLoader", MainDataLoader);
+            this.Resources.Add("mainRefData", MainRefData);
+            this.Resources.Add("mainData", MainData);
+            this.Resources.Add("mainTreeController", MainTreeController);
         }
 
         public DataLoader MainDataLoader

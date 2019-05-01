@@ -34,6 +34,12 @@ namespace FuzzyTreeLib.Models
             this.NumberOfDecimals = numberOfDecimals;
         }
 
+        /// <summary>
+        /// Add new instance of RefAtribut to table.
+        /// RefAtribut is a class containing list of lexigraphics
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="lexigraphics"></param>
         public void LoadRefAtribut(string name, List<RefLexigraphic> lexigraphics)
         {
             RefTable.Add(new RefAtribut(name, lexigraphics, NumberOfDecimals));

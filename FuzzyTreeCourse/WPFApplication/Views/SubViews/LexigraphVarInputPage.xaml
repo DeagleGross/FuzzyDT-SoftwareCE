@@ -7,7 +7,7 @@
              xmlns:subViews="clr-namespace:FuzzyTreeWPF.Views.SubViews"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
-             Background="Chocolate"
+             Background="WhiteSmoke"
              DataContext="{Binding RelativeSource={RelativeSource Self}}">
     <Border BorderBrush="DarkSlateBlue" BorderThickness="3">
         <Grid Margin="20, 20, 20, 20">
@@ -28,7 +28,7 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="0.25*"></ColumnDefinition>
                 <ColumnDefinition Width="0.25*"></ColumnDefinition>
-                <ColumnDefinition Width="0.25*"></ColumnDefinition>
+                <ColumnDefinition Width="0.4*"></ColumnDefinition>
                 <ColumnDefinition Width="0.25*"></ColumnDefinition>
                 <ColumnDefinition Width="0.25*"></ColumnDefinition>
                 <ColumnDefinition Width="0.5*"></ColumnDefinition>
@@ -64,7 +64,7 @@
             Background="DarkOrchid" Opacity="0.7" FontWeight="Black"/>
 
             <TextBox Grid.Row="1" Grid.Column="5" Margin="5, 5, 5, 5"
-            FontSize="14" TextAlignment="Center"/>
+            FontSize="14" TextAlignment="Center" Text="{Binding InputAtributValue}"/>
 
             <subViews:SubAtribut x:Name="SubAtribut1" AtributName="Малый" From="0" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" />
             <subViews:SubAtribut x:Name="SubAtribut2" AtributName="Средний" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="5" />

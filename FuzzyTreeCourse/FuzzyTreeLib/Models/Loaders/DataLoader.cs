@@ -32,6 +32,33 @@ namespace FuzzyTreeLib.Models
             InputValues.Add(inputValue);
         }
 
+        /// <summary>
+        /// Add to inputVals container value passed from GUI
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="value"></param>
+        private void AddInputFromGUI(string name, double value)
+        {
+            InputValue inputValue = new InputValue(name);
+            inputValue.Value = value;
+
+            InputValues.Add(inputValue);
+        }
+
+        /// <summary>
+        /// Empties container of inputVals. Used before filling container
+        /// </summary>
+        public void EmptyInputsBeforeFill() => InputValues.Clear();
+
+        public void FillInputsFromGUI(string name, double value)
+        {
+            AddInputFromGUI(name, value);
+        }
+
+        /// <summary>
+        /// Empty inputVals container and fill it with console
+        /// </summary>
+        /// <param name="atributs"></param>
         public void FillInputs(List<Atribut> atributs)
         {
             // to empty input
@@ -61,6 +88,11 @@ namespace FuzzyTreeLib.Models
             return atr;
         }
 
+        /// <summary>
+        /// Loads Sample test to passed controller
+        /// for CONSOLE-VERSION.
+        /// </summary>
+        /// <param name="controllerMain"></param>
         public void LoadSampleTest(MainController controllerMain)
         {
             // ADDING TEST SAMPLE ON TREE
@@ -104,6 +136,29 @@ namespace FuzzyTreeLib.Models
 
             //
             // ### ADDING TEST SAMPLE ON TREE
+        }
+
+        /// <summary>
+        /// Loads sample input of DATA to controller.
+        /// RefData is filled using GUI (also fillInputValues button)
+        /// </summary>
+        /// <param name="mainController"> controller which data to fill </param>
+        public void LoadSampleTestForGUI(MainController mainController)
+        {
+            mainController.Data.DataTable = new List<Atribut>();
+
+            // доход
+            mainController.LoadAtributThroughDataLoader("Доход", 
+                new List<double>() { 10000, 15000, 20000, 30000, 25000, 35000, 50000 });
+
+            // проживание в регионе
+            mainController.LoadAtributThroughDataLoader("Проживание в регионе", 
+                new List<double>() { 0, 10, 15, 20, 35, 40, 40 });
+
+            // результативный массив значений - рейтинг (%)
+            mainController.LoadAtributThroughDataLoader(
+                "Рейтинг", new List<double>() { 0, 0, 10, 30, 70, 90, 100 }
+            );
         }
     }
 }

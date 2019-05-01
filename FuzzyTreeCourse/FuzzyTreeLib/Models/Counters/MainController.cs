@@ -58,6 +58,32 @@ namespace FuzzyTreeLib.Models.Counters
             TreeController = new TreeController();
         }
 
+        /// <summary>
+        /// Function to call after all input data is formed in this controller.
+        /// Does all manipulations: normalization, referenceVals, entropy, GrowthFuction, result
+        /// </summary>
+        public double CountTillEnd()
+        {
+            // Normalizing resultValues in Data
+            NormalizeResultValues();
+
+            // Reforming values
+            CountReferenceValuesFromDataValues();
+
+            CountEntropyForAllLexigraphics();
+
+            CountGrowthFunctionForAllLexigraphics();
+
+            // input values were parsed correctly so 
+            // everything left is tree construction and passing result to it
+
+            // Construct Tree
+            TreeController.ConstructTree(RefData.RefTable, true);
+
+            // Return result
+            return TreeController.GetTheResult(DataLoader.InputValues);
+        }
+
         public void LoadAtributThroughDataLoader(string name, List<double> valsDoubles)
         {
             Data.DataTable.Add(this.DataLoader.LoadAtributThroughList(name, valsDoubles));
@@ -137,6 +163,19 @@ namespace FuzzyTreeLib.Models.Counters
         /// Normalization of Result Values in Data object
         /// </summary>
         public void NormalizeResultValues() => Data.NormalizeResultDoubles();
+        
+        /// <summary>
+        /// constructs a tree, passes inputvals of atributs and returns result
+        /// </summary>
+        /// <returns></returns>
+        public double GetDoubleResultValueFromGUI()
+        {
+            // Construct Tree
+            TreeController.ConstructTree(RefData.RefTable, true);
+
+            // Return result
+            return TreeController.GetTheResult(DataLoader.InputValues);
+        }
 
         /// <summary>
         /// Returns result of tree implementation

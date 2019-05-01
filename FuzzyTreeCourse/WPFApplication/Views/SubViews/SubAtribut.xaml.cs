@@ -20,40 +20,60 @@ namespace FuzzyTreeWPF.Views.SubViews
     /// </summary>
     public partial class SubAtribut : UserControl
     {
+        /// <summary>
+        /// Atribut Name
+        /// </summary>
         public static readonly DependencyProperty AtributNameProperty =
             DependencyProperty.Register("AtributName", typeof(string), typeof(SubAtribut), new PropertyMetadata(null));
+
+        /// <summary>
+        /// From Property
+        /// </summary>
+        public static readonly DependencyProperty FromProperty =
+            DependencyProperty.Register("From", typeof(double), typeof(SubAtribut), new PropertyMetadata(null));
+
+        /// <summary>
+        /// Left Property
+        /// </summary>
+        public static readonly DependencyProperty LeftProperty =
+            DependencyProperty.Register("Left", typeof(double), typeof(SubAtribut), new PropertyMetadata(null));
+
+        /// <summary>
+        /// Right Property
+        /// </summary>
+        public static readonly DependencyProperty RightProperty =
+            DependencyProperty.Register("Right", typeof(double), typeof(SubAtribut), new PropertyMetadata(null));
+
+        /// <summary>
+        /// To Property
+        /// </summary>
+        public static readonly DependencyProperty ToProperty =
+            DependencyProperty.Register("To", typeof(double), typeof(SubAtribut), new PropertyMetadata(null));
+
         public string AtributName
         {
             get { return (string)GetValue(AtributNameProperty); }
             set { SetValue(AtributNameProperty, value); }
         }
 
-        public static readonly DependencyProperty FromProperty =
-            DependencyProperty.Register("From", typeof(double), typeof(SubAtribut), new PropertyMetadata(null));
         public double From
         {
             get { return (double) GetValue(FromProperty); }
             set { SetValue(FromProperty, value); }
         }
 
-        public static readonly DependencyProperty LeftProperty =
-            DependencyProperty.Register("Left", typeof(double), typeof(SubAtribut), new PropertyMetadata(null));
         public double Left
         {
             get { return (double)GetValue(LeftProperty); }
             set { SetValue(LeftProperty, value); }
         }
 
-        public static readonly DependencyProperty RightProperty =
-            DependencyProperty.Register("Right", typeof(double), typeof(SubAtribut), new PropertyMetadata(null));
         public double Right
         {
             get { return (double)GetValue(RightProperty); }
             set { SetValue(RightProperty, value); }
         }
 
-        public static readonly DependencyProperty ToProperty =
-            DependencyProperty.Register("To", typeof(double), typeof(SubAtribut), new PropertyMetadata(null));
         public double To
         {
             get { return (double)GetValue(ToProperty); }
