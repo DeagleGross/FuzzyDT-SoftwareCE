@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Channels;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -85,6 +86,19 @@ namespace FuzzyTreeWPF.Views.SubViews
             InitializeComponent();
         }
 
+        public event EventHandler UserControlClicked;
+        private void PropertyValue_Changed(object sender, RoutedEventArgs e)
+        {
+            if (UserControlClicked != null)
+            {
+                UserControlClicked(this, EventArgs.Empty);
+            }
+        }
+
+        /// <summary>
+        /// Standart overload of ToString for debug
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return $"{AtributName}::from={From}, left={Left}, right={Right}, to={To}";

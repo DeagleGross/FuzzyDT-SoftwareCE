@@ -105,5 +105,20 @@ namespace FuzzyTreeWPF.Views.SubViews
 
             mainController.RefData.LoadRefAtribut(this.Caption, refLexigraphics);
         }
+
+        /// <summary>
+        /// Called when any subView-subAtr value was changed.
+        /// Calls event that redraws lexi-graph
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void PropertyValue_Changed(object sender, EventArgs e)
+        {
+            // check on creation
+            if (subAtributs == null || subAtributs.Count == 0)
+                FormSubAtributsUIelemsList();
+
+            LexiGraph.GraphToReDraw(subAtributs.Where(sub => sub.IsVisible));
+        }
     }
 }
