@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.Remoting.Channels;
 using System.Text;
@@ -53,32 +54,32 @@ namespace FuzzyTreeWPF.Views.SubViews
 
         public string AtributName
         {
-            get { return (string)GetValue(AtributNameProperty); }
-            set { SetValue(AtributNameProperty, value); }
+            get => (string)GetValue(AtributNameProperty);
+            set => SetValue(AtributNameProperty, value);
         }
 
         public double From
         {
-            get { return (double) GetValue(FromProperty); }
-            set { SetValue(FromProperty, value); }
+            get => (double) GetValue(FromProperty);
+            set => SetValue(FromProperty, value);
         }
 
         public double Left
         {
-            get { return (double)GetValue(LeftProperty); }
-            set { SetValue(LeftProperty, value); }
+            get => (double)GetValue(LeftProperty);
+            set => SetValue(LeftProperty, value);
         }
 
         public double Right
         {
-            get { return (double)GetValue(RightProperty); }
-            set { SetValue(RightProperty, value); }
+            get => (double)GetValue(RightProperty);
+            set => SetValue(RightProperty, value);
         }
 
         public double To
         {
-            get { return (double)GetValue(ToProperty); }
-            set { SetValue(ToProperty, value); }
+            get => (double)GetValue(ToProperty);
+            set => SetValue(ToProperty, value);
         }
 
         public SubAtribut()

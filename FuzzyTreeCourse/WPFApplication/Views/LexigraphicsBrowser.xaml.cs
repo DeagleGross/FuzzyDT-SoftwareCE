@@ -63,20 +63,6 @@ namespace FuzzyTreeWPF.Views
                 Atribut1,
                 Atribut2
             };
-
-            // TO HIDE LEXIGRAPH-VAR-INPUT-PAGE THAT ARE INVISIBLE
-
-            //var tmp = new List<LexigraphVarInputPage>();
-
-            //foreach (var lexigraphPage in lexigraphVarInputPages)
-            //{
-            //    if (lexigraphPage.IsVisible)
-            //        tmp.Add(lexigraphPage);
-            //}
-
-            //lexigraphVarInputPages = tmp;
-
-            // TO HIDE LEXIGRAPH-VAR-INPUT-PAGE THAT ARE INVISIBLE--------------------------
         }
 
         public LexigraphicsBrowser()

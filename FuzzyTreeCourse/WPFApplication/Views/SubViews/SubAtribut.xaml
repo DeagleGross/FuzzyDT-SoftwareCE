@@ -38,7 +38,7 @@
         <TextBlock Grid.Row="2" Grid.Column="1" 
                    Text="LEFT value" FontSize="16"
                    TextAlignment="Center" Background="Bisque"/>
-        <TextBox Grid.Row="2" Grid.Column="2" Margin="5,5,5,5"
+        <TextBox Grid.Row="2" Grid.Column="2" Margin="5,5,5,5" x:Name="TxtBoxLeft"
                  Text="{Binding Left}" FontSize="16" TextAlignment="Center"
                  TextChanged="PropertyValue_Changed"
         />
@@ -47,7 +47,7 @@
         <TextBlock Grid.Row="3" Grid.Column="1" 
                    Text="Is 1.0 reference FROM" FontSize="16"
                    TextAlignment="Center" Background="Bisque"/>
-        <TextBox Grid.Row="3" Grid.Column="2" Margin="5,5,5,5"
+        <TextBox Grid.Row="3" Grid.Column="2" Margin="5,5,5,5" x:Name="TxtBoxFrom"
                  Text="{Binding From}" FontSize="16" TextAlignment="Center"
                  TextChanged="PropertyValue_Changed"
         />
@@ -56,7 +56,7 @@
         <TextBlock Grid.Row="4" Grid.Column="1" 
                    Text="is 1.0 reference TO" FontSize="16"
                    TextAlignment="Center" Background="Bisque"/>
-        <TextBox Grid.Row="4" Grid.Column="2" Margin="5,5,5,5"
+        <TextBox Grid.Row="4" Grid.Column="2" Margin="5,5,5,5" x:Name="TxtBoxTo"
                  Text="{Binding To}" FontSize="16" TextAlignment="Center"
                  TextChanged="PropertyValue_Changed"
         />
@@ -65,7 +65,7 @@
         <TextBlock Grid.Row="5" Grid.Column="1" 
                    Text="RIGHT value" FontSize="16"
                    TextAlignment="Center" Background="Bisque"/>
-        <TextBox Grid.Row="5" Grid.Column="2" Margin="5,5,5,5"
+        <TextBox Grid.Row="5" Grid.Column="2" Margin="5,5,5,5" x:Name="TxtBoxRight"
                  Text="{Binding Right}" FontSize="16" TextAlignment="Center"
                  TextChanged="PropertyValue_Changed"
         />
