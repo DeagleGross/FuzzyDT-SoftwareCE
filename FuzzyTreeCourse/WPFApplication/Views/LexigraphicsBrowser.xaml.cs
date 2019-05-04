@@ -26,6 +26,28 @@ namespace FuzzyTreeWPF.Views
         List<SubViews.LexigraphVarInputPage> lexigraphVarInputPages;
 
         /// <summary>
+        /// Method to return true when input values of properties of atribut are initialized properly
+        /// </summary>
+        /// <returns></returns>
+        private bool ParsedAtributValuesCorrectly()
+        {
+            foreach (var lexInputPage in lexigraphVarInputPages)
+            {
+                foreach (var subAtr in lexInputPage.SubAtributs)
+                {
+                    if (!subAtr.AreValuesCorrect())
+                    {
+                        MessageBox.Show($"Error in subAttribute '{subAtr.AtributName}' of Attribute '{lexInputPage.Caption}'. " +
+                                        $"There are some rules to follow: (Left <= From <= To <= Right)");
+                        return false;
+                    }
+                }
+            }
+
+            return true;
+        }
+
+        /// <summary>
         /// Method to return false when inputValues of atributs are not initialized properly by user
         /// </summary>
         /// <returns></returns>
@@ -99,8 +121,12 @@ namespace FuzzyTreeWPF.Views
 
             // TODO parse input - check all fields to be with value
 
-            // returning if input values are passed incorrectly
+            // escaping if input values are passed incorrectly
             if (!ParsedInputValuesCorrectly())
+                return;
+
+            // escaping if values of atributs are incorrect
+            if (!ParsedAtributValuesCorrectly())
                 return;
 
             // need to recreate maincontroller to destroy all RefData and tables that were created before
@@ -180,6 +206,16 @@ namespace FuzzyTreeWPF.Views
                 Atribut2.SubAtribut3.From = 38;
                 Atribut2.SubAtribut3.To = double.MaxValue;
                 Atribut2.SubAtribut3.Right = double.MaxValue;
+        }
+
+        /// <summary>
+        /// Occurs when page is loaded and filling of all gui input is needed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void LexigraphicsBrowser_OnLoaded(object sender, RoutedEventArgs e)
+        {
+            FillSampleValues(sender, e);
         }
     }
 }

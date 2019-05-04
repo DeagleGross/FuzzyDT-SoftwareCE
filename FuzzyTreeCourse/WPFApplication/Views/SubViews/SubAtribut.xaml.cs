@@ -87,7 +87,27 @@ namespace FuzzyTreeWPF.Views.SubViews
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Returns true if no values are placed incorrectly in order (left <= from <= to <= right)
+        /// </summary>
+        /// <returns></returns>
+        public bool AreValuesCorrect()
+        {
+            if (Left > From || Left < 0) return false;
+            if (From > To || From < 0) return false;
+            if (To > Right || To < 0) return false;
+            if (Right < 0) return false;
+
+            return true;
+        }
+
+        
         public event EventHandler UserControlClicked;
+        /// <summary>
+        /// Occurs when text-value of textBoxes has changed and graph has to be redrawn
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PropertyValue_Changed(object sender, RoutedEventArgs e)
         {
             if (UserControlClicked != null)
