@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using FuzzyTreeLib.Models.Counters;
 using FuzzyTreeLib.Models.Ref;
+using WPFApplication.Helpers;
 
 namespace FuzzyTreeWPF.Views.SubViews
 {
@@ -119,6 +120,11 @@ namespace FuzzyTreeWPF.Views.SubViews
                 FormSubAtributsUIelemsList();
 
             LexiGraph.GraphToReDraw(subAtributs.Where(sub => sub.IsVisible));
+        }
+
+        private void LexigraphVarInputPage_OnLoaded(object sender, RoutedEventArgs e)
+        {
+            FillInputData(ResourcePicker.GetMainController());
         }
     }
 }

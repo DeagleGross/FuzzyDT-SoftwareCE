@@ -48,6 +48,25 @@ namespace FuzzyTreeLib.Models.Counters
         }
 
         /// <summary>
+        /// Constructor to initialize reference data with number of decimals
+        /// AND reinitialize data if true
+        /// </summary>
+        /// <param name="numberOfDecimals"></param>
+        /// <param name="dataReinitialize"></param>
+        public MainController(int numberOfDecimals, bool dataReinitialize = true)
+        {
+            if (dataReinitialize)
+                Data = new Data();
+
+            if (Data == null)
+                Data = new Data();
+
+            RefData = new RefData(numberOfDecimals);
+            DataLoader = new DataLoader();
+            TreeController = new TreeController();
+        }
+
+        /// <summary>
         /// Constructor with number of decimals for refData
         /// </summary>
         public MainController(int numberOfDecimals)
