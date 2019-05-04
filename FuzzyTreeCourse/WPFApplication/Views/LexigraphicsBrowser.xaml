@@ -7,7 +7,8 @@
         xmlns:subViews="clr-namespace:FuzzyTreeWPF.Views.SubViews"
         mc:Ignorable="d"
         Title="LexigraphicsBrowser" Height="600" Width="800"
-        Loaded="LexigraphicsBrowser_OnLoaded">
+        Loaded="LexigraphicsBrowser_OnLoaded"
+        Background="WhiteSmoke">
     <ScrollViewer>
         <Grid>
             <Grid.RowDefinitions>
@@ -63,7 +64,7 @@
             />
 
             <Button Grid.Row="7" Grid.Column="1" Margin="5, 5, 5, 5"
-                    Click="CountResult" Content="Find result" FontSize="25"/>
+               BorderThickness="3" BorderBrush="Black" Background="MediumPurple" Click="CountResult" Content="Find result" FontSize="25"/>
         </Grid>
     </ScrollViewer>
 </Window>

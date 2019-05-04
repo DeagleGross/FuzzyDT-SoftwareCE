@@ -58,6 +58,9 @@
     </ApplicationDefinition>
     <Compile Include="Helpers\MyCustomEventArgs.cs" />
     <Compile Include="Helpers\ResourcePicker.cs" />
+    <Compile Include="Views\FuzzyTreePage.xaml.cs">
+      <DependentUpon>FuzzyTreePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\InstructionsPage.xaml.cs">
       <DependentUpon>InstructionsPage.xaml</DependentUpon>
     </Compile>
@@ -73,6 +76,10 @@
     <Compile Include="Views\SubViews\SubAtribut.xaml.cs">
       <DependentUpon>SubAtribut.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\FuzzyTreePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\InstructionsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

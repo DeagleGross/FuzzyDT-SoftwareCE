@@ -44,7 +44,7 @@
                        Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
                        Background="DarkOrchid" Opacity="0.7" FontWeight="Black"
                        TextAlignment="Center" Margin="5, 5, 5, 5"/>
-            <TextBox Margin="5, 5, 5, 5" Text="{Binding Caption}" 
+            <TextBox Margin="5, 5, 75, 5" Text="{Binding Caption}" 
                      Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2"
                      FontSize="13" TextAlignment="Center"/>
 
@@ -55,7 +55,7 @@
 
             <ComboBox Name="CmbBoxAtributsQuantity" SelectedIndex="0"
                 DropDownClosed="AmountOfAtributsPicker_OnDropDownClosed"
-                Grid.Row="1" Grid.Column="2" Margin="5, 5, 5, 5">
+                Grid.Row="1" Grid.Column="2" Margin="5, 5, 55, 5">
                 <TextBlock>3</TextBlock>
                 <TextBlock>4</TextBlock>
                 <TextBlock>5</TextBlock>

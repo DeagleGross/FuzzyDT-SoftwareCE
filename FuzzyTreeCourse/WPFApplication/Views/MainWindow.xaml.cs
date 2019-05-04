@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using FuzzyTreeLib.Models.Counters;
+using WPFApplication.Helpers;
 using WPFApplication.Views;
 
 namespace FuzzyTreeWPF
@@ -47,7 +48,14 @@ namespace FuzzyTreeWPF
         /// <param name="e"></param>
         private void WatchFuzzyTree(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Going to fuzzy tree!");
+            var mainController = ResourcePicker.GetMainController();
+
+            if (!mainController.TreeController.IsConstructed)
+                MessageBox.Show("Firstly build a tree by clicking 'Find Result' in 'Browse Lexigraphics Values' page.");
+            else
+            {
+                (new FuzzyTreePage()).Show();
+            }
         }
 
         /// <summary>
