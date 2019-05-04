@@ -76,8 +76,12 @@ namespace WPFApplication.Views.SubViews
             canGraph.Children.Add(yaxis_path);
 
             // main data drawn
-            Brush[] brushes = { Brushes.Red, Brushes.Green, Brushes.Blue, Brushes.Chocolate };
-            Random rand = new Random();
+            Brush[] brushes =
+            {
+                Brushes.Red, Brushes.Green, Brushes.Blue, Brushes.Chocolate,
+                Brushes.CadetBlue, Brushes.BlueViolet, Brushes.DarkGoldenrod, Brushes.DeepPink,
+                Brushes.SlateGray
+            };
 
             for (int data_set = 0; data_set < subAtributs.Count(); data_set++)
             {

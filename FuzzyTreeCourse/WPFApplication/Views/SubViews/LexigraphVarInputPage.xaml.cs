@@ -25,6 +25,16 @@ namespace FuzzyTreeWPF.Views.SubViews
     {
         List<SubViews.SubAtribut> subAtributs;
 
+        public List<SubViews.SubAtribut> SubAtributs
+        {
+            get
+            {
+                if (subAtributs == null)
+                    FormSubAtributsUIelemsList();
+                return subAtributs;
+            }
+        }
+
         public static readonly DependencyProperty CaptionProperty =
             DependencyProperty.Register("Caption", typeof(string), typeof(LexigraphVarInputPage), new PropertyMetadata(null));
         public string Caption
@@ -120,11 +130,6 @@ namespace FuzzyTreeWPF.Views.SubViews
                 FormSubAtributsUIelemsList();
 
             LexiGraph.GraphToReDraw(subAtributs.Where(sub => sub.IsVisible));
-        }
-
-        private void LexigraphVarInputPage_OnLoaded(object sender, RoutedEventArgs e)
-        {
-            FillInputData(ResourcePicker.GetMainController());
         }
     }
 }

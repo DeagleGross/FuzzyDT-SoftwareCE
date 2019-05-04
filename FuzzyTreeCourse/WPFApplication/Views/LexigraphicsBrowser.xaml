@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:FuzzyTreeWPF.Views"
         xmlns:subViews="clr-namespace:FuzzyTreeWPF.Views.SubViews"
         mc:Ignorable="d"
-        Title="LexigraphicsBrowser" Height="600" Width="800">
+        Title="LexigraphicsBrowser" Height="600" Width="800"
+        Loaded="LexigraphicsBrowser_OnLoaded">
     <ScrollViewer>
         <Grid>
             <Grid.RowDefinitions>
@@ -60,9 +61,6 @@
                 Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Margin="5, 5, 5, 5"
                 Visibility="Collapsed"
             />
-
-            <Button Grid.Row="7" Grid.Column="0" Margin="5, 5, 5, 5"
-                    Click="FillSampleValues" Content="Fill with sample input values" FontSize="25"/>
 
             <Button Grid.Row="7" Grid.Column="1" Margin="5, 5, 5, 5"
                     Click="CountResult" Content="Find result" FontSize="25"/>
