@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using FuzzyTreeLib.Models.AbstractInterfaces;
 using FuzzyTreeLib.Models.Loaders;
 using FuzzyTreeLib.Models.Ref;
+using Shields.GraphViz.Models;
 
 namespace FuzzyTreeLib.Models.Tree
 {
@@ -57,6 +58,20 @@ namespace FuzzyTreeLib.Models.Tree
             this.PositiveRef = refLexigraphic.GetPositiveRefValue;
 
             this.ParentAtribut = parent;
+        }
+
+        /// <summary>
+        /// Recursively goes into Tree-Structure and adds found edges to collection
+        /// </summary>
+        /// <param name="edges"></param>
+        public void GetEdgeStatements(HashSet<KeyValuePair<string, string>> edges)
+        {
+            if (ChildAtribut == null)
+                return;
+
+            edges.Add(new KeyValuePair<string, string>(this.Name, ChildAtribut.Name));
+            // going in recursion
+            ChildAtribut.GetEdgeStatements(edges);
         }
 
         /// <summary>

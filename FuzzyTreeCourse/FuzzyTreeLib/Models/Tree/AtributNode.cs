@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FuzzyTreeLib.Models.Loaders;
 using FuzzyTreeLib.Models.Ref;
+using Shields.GraphViz.Models;
 
 namespace FuzzyTreeLib.Models.Tree
 {
@@ -26,6 +27,20 @@ namespace FuzzyTreeLib.Models.Tree
             foreach (var childrenLexigraph in ChildrenLexigraphs)
             {
                 childrenLexigraph.AddChildAtributNode(refAtribut);
+            }
+        }
+
+        /// <summary>
+        /// Recursively goes into Tree-Structure and adds found edges to collection
+        /// </summary>
+        /// <param name="edges"></param>
+        public void GetEdgeStatements(HashSet<KeyValuePair<string, string>> edges)
+        {
+            foreach (var lexs in ChildrenLexigraphs)
+            {
+                edges.Add(new KeyValuePair<string, string>(this.Name, lexs.GetName));
+                // going in recursion
+                lexs.GetEdgeStatements(edges);
             }
         }
 

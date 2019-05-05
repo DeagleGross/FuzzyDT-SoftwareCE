@@ -5,8 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFApplication.Views"
         mc:Ignorable="d"
-        Title="FuzzyTreePage" Height="450" Width="800">
-    <Grid>
-        
+        Title="FuzzyTreePage" Height="450" Width="800"
+        Loaded="FuzzyTreePage_OnLoaded">
+    <Grid Background="WhiteSmoke">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2.5*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0">
+            <Image x:Name="mainFuzzyTreeGraphImage"
+                   Margin="20, 20, 20, 20"
+            />
+        </StackPanel>
+
+        <StackPanel Grid.Column="1">
+            <Button Margin="5, 50, 5, 5" Height="32" Click="ButtonRefreshFuzzyTreeGraph"
+                    BorderBrush="Black" Background="DarkOrchid" BorderThickness="3">
+                Refresh Fuzzy-Tree picture
+            </Button>
+        </StackPanel>
     </Grid>
 </Window>
