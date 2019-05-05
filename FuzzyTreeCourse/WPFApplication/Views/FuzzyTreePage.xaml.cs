@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Management.Instrumentation;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Media.Imaging;
 using FuzzyTreeLib.Models.Tree;
@@ -65,6 +67,8 @@ namespace WPFApplication.Views
             Graph graph = Graph.Directed.AddRange(edgeStatements);
 
             IRenderer renderer = new Renderer(GraphVizBinPath);
+
+            // opening and saving image here
             using (Stream file = File.Open(GraphPicsPath, FileMode.OpenOrCreate))
             {
                 await renderer.RunAsync(
@@ -74,7 +78,16 @@ namespace WPFApplication.Views
                     CancellationToken.None);
             }
 
-            //mainFuzzyTreeGraphImage.Source = new BitmapImage(new Uri(GraphPicsPath, UriKind.Relative));
+            // showing image as control AT RUNTIME
+            BitmapImage image = new BitmapImage();
+            image.BeginInit();
+
+            var path = Path.Combine(Environment.CurrentDirectory, "../../GraphPics", "graph.png");
+            var uri = new Uri(path);
+            image.UriSource = uri;
+
+            image.EndInit();
+            mainFuzzyTreeImage.Source = image;
         }
 
         /// <summary>
