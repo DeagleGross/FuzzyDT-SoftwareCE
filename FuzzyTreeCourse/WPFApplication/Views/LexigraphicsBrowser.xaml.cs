@@ -169,43 +169,47 @@ namespace FuzzyTreeWPF.Views
         /// </summary>
         private void FillFromTestingSample()
         {
-            Atribut1.Caption = "Доход";
-                Atribut1.SubAtribut1.AtributName = "Малый";
+            Atribut1.Caption = "Income";
+                Atribut1.InputAtributValue = 15000;
+
+                Atribut1.SubAtribut1.AtributName = "Small";
                 Atribut1.SubAtribut1.Left = 0;
                 Atribut1.SubAtribut1.From = 0;
                 Atribut1.SubAtribut1.To = 8000;
                 Atribut1.SubAtribut1.Right = 21000;
 
-                Atribut1.SubAtribut2.AtributName = "Средний";
+                Atribut1.SubAtribut2.AtributName = "Middle";
                 Atribut1.SubAtribut2.Left = 8000;
                 Atribut1.SubAtribut2.From = 21000;
                 Atribut1.SubAtribut2.To = 25000;
                 Atribut1.SubAtribut2.Right = 38000;
 
-                Atribut1.SubAtribut3.AtributName = "Высокий";
+                Atribut1.SubAtribut3.AtributName = "High";
                 Atribut1.SubAtribut3.Left = 25000;
                 Atribut1.SubAtribut3.From = 38000;
-                Atribut1.SubAtribut3.To = double.MaxValue;
-                Atribut1.SubAtribut3.Right = double.MaxValue;
+                Atribut1.SubAtribut3.To = 100000;
+                Atribut1.SubAtribut3.Right = 100000;
 
-            Atribut2.Caption = "Проживание в регионе";
-                Atribut2.SubAtribut1.AtributName = "Временно";
+            Atribut2.Caption = "Years of living";
+                Atribut2.InputAtributValue = 20;
+
+                Atribut2.SubAtribut1.AtributName = "Temporarily";
                 Atribut2.SubAtribut1.Left = 0;
                 Atribut2.SubAtribut1.From = 0;
                 Atribut2.SubAtribut1.To = 8;
                 Atribut2.SubAtribut1.Right = 21;
 
-                Atribut2.SubAtribut2.AtributName = "Продолжительно";
+                Atribut2.SubAtribut2.AtributName = "Lastingly";
                 Atribut2.SubAtribut2.Left = 8;
                 Atribut2.SubAtribut2.From = 21;
                 Atribut2.SubAtribut2.To = 24;
                 Atribut2.SubAtribut2.Right = 38;
 
-                Atribut2.SubAtribut3.AtributName = "Постоянно";
+                Atribut2.SubAtribut3.AtributName = "Constantly";
                 Atribut2.SubAtribut3.Left = 24;
                 Atribut2.SubAtribut3.From = 38;
-                Atribut2.SubAtribut3.To = double.MaxValue;
-                Atribut2.SubAtribut3.Right = double.MaxValue;
+                Atribut2.SubAtribut3.To = 50;
+                Atribut2.SubAtribut3.Right = 50;
         }
 
         /// <summary>

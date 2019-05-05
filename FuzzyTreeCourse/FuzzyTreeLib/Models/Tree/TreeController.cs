@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FuzzyTreeLib.Models.Loaders;
 using FuzzyTreeLib.Models.Ref;
+using Shields.GraphViz.Models;
 
 namespace FuzzyTreeLib.Models.Tree
 {
@@ -23,6 +24,21 @@ namespace FuzzyTreeLib.Models.Tree
         {
             IsConstructed = false;
         }
+
+        /// <summary>
+        /// Returns collection of EdgeStatement from whole Tree
+        /// </summary>
+        /// <returns></returns>
+        public HashSet<KeyValuePair<string,string>> GetTreeEdgeStatements()
+        {
+            HashSet<KeyValuePair<string, string>> edges = new HashSet<KeyValuePair<string, string>>();
+
+            // going in recursion from root
+            Root.GetEdgeStatements(edges);
+
+            return edges;
+        }
+
 
         /// <summary>
         /// Constructs a tree if it not constructed at all
