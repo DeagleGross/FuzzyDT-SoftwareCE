@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFApplication.Views"
         mc:Ignorable="d"
-        Title="FuzzyTreePage" Height="450" Width="800"
+        Title="FuzzyTreePage" Height="496.5" Width="800"
         Loaded="FuzzyTreePage_OnLoaded">
     <Grid Background="WhiteSmoke">
         <Grid.ColumnDefinitions>
@@ -14,16 +14,30 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Column="0">
-            <Image x:Name="mainFuzzyTreeGraphImage"
-                   Margin="20, 20, 20, 20"
+            <Image Name="mainFuzzyTreeImage" Margin="20, 20, 20, 20" 
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"                   
             />
         </StackPanel>
 
         <StackPanel Grid.Column="1">
-            <Button Margin="5, 50, 5, 5" Height="32" Click="ButtonRefreshFuzzyTreeGraph"
-                    BorderBrush="Black" Background="DarkOrchid" BorderThickness="3">
-                Refresh Fuzzy-Tree picture
-            </Button>
+            <TextBlock TextWrapping="Wrap" FontSize="14" Margin="5, 20, 5, 20">
+                This is an image of constructed 
+                <Run TextDecorations="Underline"> fuzzy-tree. </Run> 
+                <LineBreak />
+                <LineBreak />
+                On every level of tree there is only 1 or multiple (3 or more) nodes.
+                The only node on level is a node characterizing 
+                <Run FontWeight="UltraBold"> Attribute-node. </Run>
+                Others multiple nodes on line are characterizing 
+                <Run FontWeight="UltraBold"> subAttribute nodes. </Run>
+                <LineBreak />
+                <LineBreak />
+                The higher node is in the tree, the more value of function 
+                <Run FontWeight="Heavy">InfoGrowth </Run>
+                it has.
+            </TextBlock>
         </StackPanel>
+
     </Grid>
 </Window>
