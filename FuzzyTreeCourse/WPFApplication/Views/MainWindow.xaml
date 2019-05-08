@@ -21,7 +21,7 @@
                     </Style>
                 </StackPanel.Resources>
 
-                <Button Content="Browse lexigraphics values" Click="BrowseLexigraphicsValues"/>
+                <Button Content="Browse linguistic variables" Click="BrowseLexigraphicsValues"/>
                 <Button Content="Watch formed fuzzy-tree" Click="WatchFuzzyTree"/>
                 <Button Content="Read instructions and other..." Click="GoToOtherInfo"/>
             </StackPanel>

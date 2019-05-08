@@ -55,27 +55,32 @@ namespace WPFApplication.Views
             var GraphVizBinPath = "../../../GraphVizPackage/bin";
             var GraphPicsPath = "../../GraphPics/graph.png";
 
-            // getting edges of tree in list of pairs (name A -> name B)
-            var edges = GetEdgesFromFuzzyTree();
-
-            var edgeStatements = new List<EdgeStatement>();
-
-            // filling graph structure with edges
-            foreach (var keyValuePair in edges)
-                edgeStatements.Add(EdgeStatement.For(keyValuePair.Key, keyValuePair.Value));
-
-            Graph graph = Graph.Directed.AddRange(edgeStatements);
-
-            IRenderer renderer = new Renderer(GraphVizBinPath);
-
-            // opening and saving image here
-            using (Stream file = File.Open(GraphPicsPath, FileMode.OpenOrCreate))
+            if (!ResourcePicker.GetMainController().Rendered)
             {
-                await renderer.RunAsync(
-                    graph, file,
-                    RendererLayouts.Dot,
-                    RendererFormats.Png,
-                    CancellationToken.None);
+                // getting edges of tree in list of pairs (name A -> name B)
+                var edges = GetEdgesFromFuzzyTree();
+
+                var edgeStatements = new List<EdgeStatement>();
+
+                // filling graph structure with edges
+                foreach (var keyValuePair in edges)
+                    edgeStatements.Add(EdgeStatement.For(keyValuePair.Key, keyValuePair.Value));
+
+                Graph graph = Graph.Directed.AddRange(edgeStatements);
+
+                IRenderer renderer = new Renderer(GraphVizBinPath);
+
+                // opening and saving image here
+                using (Stream file = File.Open(GraphPicsPath, FileMode.OpenOrCreate))
+                {
+                    await renderer.RunAsync(
+                        graph, file,
+                        RendererLayouts.Dot,
+                        RendererFormats.Png,
+                        CancellationToken.None);
+                }
+
+                ResourcePicker.GetMainController().Rendered = true;
             }
 
             // showing image as control AT RUNTIME
@@ -96,16 +101,6 @@ namespace WPFApplication.Views
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void FuzzyTreePage_OnLoaded(object sender, RoutedEventArgs e)
-        {
-            RenderGraphToPng();
-        }
-
-        /// <summary>
-        /// Occurs when button to refresh fuzzy-tree-graph is clicked
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonRefreshFuzzyTreeGraph(object sender, RoutedEventArgs e)
         {
             RenderGraphToPng();
         }

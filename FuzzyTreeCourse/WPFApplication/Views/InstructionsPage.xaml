@@ -10,14 +10,15 @@
     
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="0.2*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1.5*" />
@@ -30,16 +31,32 @@
         />
 
         <TextBlock Grid.Row="1" Grid.Column="0" FontSize="20"
-                   Text="- amount of workers in a team (in persons)" VerticalAlignment="Center"
+                   Text="- Team experience (years)" VerticalAlignment="Center"
         />
 
         <TextBlock Grid.Row="2" Grid.Column="0" FontSize="20"
-                   Text="- experience of software designers (in years)" VerticalAlignment="Center"
+                   Text="- Manager experience (years)" VerticalAlignment="Center"
         />
 
         <TextBlock Grid.Row="3" Grid.Column="0" FontSize="20"
-                   Text="- communication activity (in messages per day)" VerticalAlignment="Center"
+                   Text="- Project length (months)" VerticalAlignment="Center"
         />
+
+        <TextBlock Grid.Row="4" Grid.Column="0" FontSize="20"
+                   Text="- Entities (in the systems data model)" VerticalAlignment="Center"
+        />
+
+        <TextBlock
+            Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2"
+                   FontSize="20"
+                   TextWrapping="Wrap" VerticalAlignment="Center"
+                   Text="Be careful when changing SubAttribute parameters in 'Browse linguistic variables' page. 
+                   Database was attentively analyzed and input values were arranged to bounds of attributes provided. Visit reference below to explore database by yourself."
+        />
+
+        <TextBox Margin="40, 0, 40, 0" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Background="WhiteSmoke" FontSize="15" TextAlignment="Center">
+            https://www.kaggle.com/raulvilla/software-cost-estimation-from-promise
+        </TextBox>
 
     </Grid>
 </Window>
