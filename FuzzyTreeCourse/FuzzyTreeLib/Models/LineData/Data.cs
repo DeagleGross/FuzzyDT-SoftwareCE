@@ -13,6 +13,17 @@ namespace FuzzyTreeLib.Models
     {
         public List<Atribut> DataTable { get; set; }
 
+        public double MaxResultDouble { get; set; }
+
+        /// <summary>
+        /// Saved max result double before normalizing values
+        /// </summary>
+        /// <param name="results"></param>
+        public void SaveMaxResultDouble(List<double> results)
+        {
+            MaxResultDouble = results.Max();
+        }
+
         public Data()
         {
             DataTable = new List<Atribut>();

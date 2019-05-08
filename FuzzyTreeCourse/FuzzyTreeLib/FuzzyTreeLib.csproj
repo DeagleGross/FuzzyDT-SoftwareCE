@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Models\AbstractInterfaces\LexigraphAbstract.cs" />
     <Compile Include="Models\Counters\MainController.cs" />
+    <Compile Include="Models\DataSetObjects\CocomoObject.cs" />
     <Compile Include="Models\Loaders\DataLoader.cs" />
     <Compile Include="Models\LineData\Atribut.cs" />
     <Compile Include="Models\LineData\Data.cs" />

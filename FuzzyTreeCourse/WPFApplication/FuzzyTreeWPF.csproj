@@ -36,6 +36,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="Shields.GraphViz, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Shields.GraphViz.1.0.2.0\lib\net45\Shields.GraphViz.dll</HintPath>
     </Reference>
@@ -62,6 +68,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Helpers\ChartPoint.cs" />
     <Compile Include="Helpers\MyCustomEventArgs.cs" />
     <Compile Include="Helpers\ResourcePicker.cs" />
     <Compile Include="Views\FuzzyTreePage.xaml.cs">
@@ -72,9 +79,6 @@
     </Compile>
     <Compile Include="Views\LexigraphicsBrowser.xaml.cs">
       <DependentUpon>LexigraphicsBrowser.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\SubViews\LexiGraph.xaml.cs">
-      <DependentUpon>LexiGraph.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SubViews\LexigraphVarInputPage.xaml.cs">
       <DependentUpon>LexigraphVarInputPage.xaml</DependentUpon>
@@ -103,10 +107,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\LexigraphicsBrowser.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\SubViews\LexiGraph.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

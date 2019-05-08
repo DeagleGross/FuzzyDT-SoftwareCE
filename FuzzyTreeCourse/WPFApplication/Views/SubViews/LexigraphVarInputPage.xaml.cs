@@ -14,7 +14,11 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using FuzzyTreeLib.Models.Counters;
 using FuzzyTreeLib.Models.Ref;
+using LiveCharts;
+using LiveCharts.Configurations;
+using LiveCharts.Wpf;
 using WPFApplication.Helpers;
+using ChartPoint = LiveCharts.ChartPoint;
 
 namespace FuzzyTreeWPF.Views.SubViews
 {
@@ -118,6 +122,40 @@ namespace FuzzyTreeWPF.Views.SubViews
         }
 
         /// <summary>
+        /// References chart.series and adds all points to it
+        /// </summary>
+        private void InitializeChartSeries(IEnumerable<SubAtribut> subAtributs)
+        {
+            //Lets define a configuration by default for all the series in the SeriesCollection
+            var config = new CartesianMapper<ChartPoint>()
+                .X(chartPoint => chartPoint.XStart)
+                .Y(chartPoint => chartPoint.YStart);
+
+            Chart.Series = new SeriesCollection(config);
+
+            foreach (var subAtr in subAtributs)
+            {
+                ChartValues<ChartPoint> chartPoints = new ChartValues<ChartPoint>();
+
+                if (subAtr.Left != subAtr.From)
+                    chartPoints.Add(new ChartPoint() { XStart = subAtr.Left, YStart = 0 });
+
+                chartPoints.Add(new ChartPoint(){ XStart = subAtr.From, YStart = 1 });
+                chartPoints.Add(new ChartPoint(){ XStart = subAtr.To, YStart = 1 });
+
+                if (subAtr.To != subAtr.Right)
+                    chartPoints.Add(new ChartPoint() { XStart = subAtr.Right, YStart = 0 });
+
+                Chart.Series.Add(new LineSeries()
+                {
+                    Title = subAtr.AtributName,
+                    Values = chartPoints,
+                    LineSmoothness = 0
+                });
+            }
+        }
+
+        /// <summary>
         /// Called when any subView-subAtr value was changed.
         /// Calls event that redraws lexi-graph
         /// </summary>
@@ -129,7 +167,30 @@ namespace FuzzyTreeWPF.Views.SubViews
             if (subAtributs == null || subAtributs.Count == 0)
                 FormSubAtributsUIelemsList();
 
-            LexiGraph.GraphToReDraw(subAtributs.Where(sub => sub.IsVisible));
+            InitializeChartSeries(subAtributs.Where(s => s.IsVisible));
+
+            //Chart.Series = new SeriesCollection
+            //{
+            //    new LineSeries
+            //    {
+            //        Title = "Series 1",
+            //        Values = new ChartValues<double> { 4, 6, 5, 2 ,4 },
+            //        LineSmoothness = 0
+            //    },
+            //    new LineSeries
+            //    {
+            //        Title = "Series 2",
+            //        Values = new ChartValues<double> { 6, 7, 3, 4 ,6 },
+            //        PointGeometry = null,
+            //    },
+            //    new LineSeries
+            //    {
+            //        Title = "Series 3",
+            //        Values = new ChartValues<double> { 4,2,7,2,7 },
+            //        PointGeometry = DefaultGeometries.Square,
+            //        PointGeometrySize = 15
+            //    }
+            //};
         }
     }
 }

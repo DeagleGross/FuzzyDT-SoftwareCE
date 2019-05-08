@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFApplication.Views"
         mc:Ignorable="d"
-        Title="FuzzyTreePage" Height="496.5" Width="800"
+        Title="FuzzyTreePage" Height="780" Width="800"
         Loaded="FuzzyTreePage_OnLoaded">
     <Grid Background="WhiteSmoke">
         <Grid.ColumnDefinitions>
@@ -16,7 +16,7 @@
         <StackPanel Grid.Column="0">
             <Image Name="mainFuzzyTreeImage" Margin="20, 20, 20, 20" 
                    HorizontalAlignment="Center"
-                   VerticalAlignment="Center"                   
+                   VerticalAlignment="Center"                    
             />
         </StackPanel>
 
@@ -26,11 +26,11 @@
                 <Run TextDecorations="Underline"> fuzzy-tree. </Run> 
                 <LineBreak />
                 <LineBreak />
-                On every level of tree there is only 1 or multiple (3 or more) nodes.
-                The only node on level is a node characterizing 
-                <Run FontWeight="UltraBold"> Attribute-node. </Run>
+                At every level of tree there is only 1 or multiple (3 or more) nodes.
+                The only node at a level is a node that stands for
+                <Run FontWeight="UltraBold"> Attribute node. </Run>
                 Others multiple nodes on line are characterizing 
-                <Run FontWeight="UltraBold"> subAttribute nodes. </Run>
+                <Run FontWeight="UltraBold"> SubAttribute nodes. </Run>
                 <LineBreak />
                 <LineBreak />
                 The higher node is in the tree, the more value of function 

@@ -106,7 +106,7 @@ namespace FuzzyTreeLib.Models.Tree
                     lower += refVar.SharedRef * (refVar.NegRef + refVar.PosRef);
             }
 
-            return upper / lower;
+            return (lower == 0) ? upper : upper / lower;
         }
 
         /// <summary>

@@ -11,6 +11,8 @@ namespace FuzzyTreeLib.Models.Counters
 {
     public class MainController
     {
+        public bool Rendered { get; set; } = false;
+
         /// <summary>
         /// dataset controller
         /// </summary>

@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using FuzzyTreeLib.Models.Counters;
+using FuzzyTreeLib.Models.DataSetObjects;
 using FuzzyTreeLib.Models.Loaders;
 using FuzzyTreeLib.Models.Ref;
 
@@ -13,7 +16,7 @@ namespace FuzzyTreeLib.Models
     public class DataLoader
     {
         private string _path;
-
+        const string Path = "../../../DataSets/kaggleCOCOMO.csv";
         public List<InputValue> InputValues { get; set; }
 
         /// <summary>
@@ -159,6 +162,144 @@ namespace FuzzyTreeLib.Models
             mainController.LoadAtributThroughDataLoader(
                 "Рейтинг", new List<double>() { 0, 0, 10, 30, 70, 90, 100 }
             );
+        }
+
+        /// <summary>
+        /// Returns List of Cocomo objects from CSV file
+        /// </summary>
+        /// <returns></returns>
+        private List<CocomoObject> GetCocomosFromCSV()
+        {
+
+            /*
+             0   1      2         3         4        5     6        7           8            9            10         11        12
+             id,Project,TeamExp,ManagerExp,YearEnd,Length,Effort,Transactions,Entities,PointsNonAdjust,Adjustment,PointsAjust,Language
+             */
+            List<CocomoObject> cocomos = new List<CocomoObject>();
+            int tmp;
+
+            using (var reader = new StreamReader(Path))
+            {
+                while (!reader.EndOfStream)
+                {
+                    var line = reader.ReadLine();
+                    var values = line.Split(',');
+
+                    if (!int.TryParse(values[0], out tmp))
+                        continue;
+
+                    cocomos.Add(new CocomoObject()
+                    {
+                        TeamExp = int.Parse(values[2]),
+                        ManagerExp = int.Parse(values[3]),
+                        Length = int.Parse(values[5]),
+                        Effort = int.Parse(values[6]),
+                        Entities = int.Parse(values[8])
+                    });
+                }
+            }
+
+            return cocomos;
+        }
+
+        /// <summary>
+        /// Returns list of double to load to data.
+        /// </summary>
+        /// <param name="cocomos"></param>
+        /// <param name="parameter"></param>
+        /// <returns></returns>
+        private List<double> GetDataFactorToLoad(List<CocomoObject> cocomos, string parameter)
+        {
+            List<double> res = new List<double>();
+
+            switch (parameter)
+            {
+                case "TeamExp":
+                {
+                    foreach (var cocomo in cocomos)
+                    {
+                        if (cocomo.TeamExp < 0)
+                            cocomo.TeamExp = 0;
+                        res.Add(cocomo.TeamExp);
+                    }
+                        
+                    break;
+                }
+                case "ManagerExp":
+                {
+                    foreach (var cocomo in cocomos)
+                    {
+                        if (cocomo.ManagerExp < 0)
+                            cocomo.ManagerExp = 0;
+                        res.Add(cocomo.ManagerExp);
+                    }
+                    break;
+                }
+                case "Length":
+                {
+                    foreach (var cocomo in cocomos)
+                    {
+                        if (cocomo.Length < 0)
+                            cocomo.Length = 0;
+                        res.Add(cocomo.Length);
+                    }
+                        
+                    break;
+                }
+                case "Entities":
+                {
+                    foreach (var cocomo in cocomos)
+                        res.Add(cocomo.Entities);
+                    break;
+                }
+                case "Effort":
+                {
+                    foreach (var cocomo in cocomos)
+                        res.Add(cocomo.Effort);
+                    break;
+                }
+                default:
+                    throw new ArgumentException();
+                    break;
+            }
+
+            return res;
+        }
+
+        /// <summary>
+        /// Uses const path to folder 'DataSets' to load data.
+        /// Fills Controller.Data for further actions
+        /// </summary>
+        /// <param name="mainController"></param>
+        public void LoadCocomoDataSet(MainController mainController)
+        {
+            List<CocomoObject> cocomos = GetCocomosFromCSV();
+
+            mainController.Data.DataTable = new List<Atribut>();
+
+            // Team Experience
+            mainController.LoadAtributThroughDataLoader("Team Experience",
+                GetDataFactorToLoad(cocomos, "TeamExp"));
+
+            // Manager Experience
+            mainController.LoadAtributThroughDataLoader("Manager Experience",
+                GetDataFactorToLoad(cocomos, "ManagerExp"));
+
+            // Length
+            mainController.LoadAtributThroughDataLoader("Length",
+                GetDataFactorToLoad(cocomos, "Length"));
+
+            // Entities
+            mainController.LoadAtributThroughDataLoader("Entities",
+                GetDataFactorToLoad(cocomos, "Entities"));
+
+            // Effort
+            // result array of values
+            mainController.LoadAtributThroughDataLoader("Effort", 
+                GetDataFactorToLoad(cocomos, "Effort"));
+
+            // need to save max value of efforts for de-normalization
+            mainController.Data.SaveMaxResultDouble(GetDataFactorToLoad(cocomos, "Effort"));
         }
     }
 }
