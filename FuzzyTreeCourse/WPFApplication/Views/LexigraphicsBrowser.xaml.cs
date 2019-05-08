@@ -224,7 +224,7 @@ namespace FuzzyTreeWPF.Views
 
             // length - checked on DB
             {
-                Atribut3.Caption = "Project Length";
+                Atribut3.Caption = "Project Duration";
                 Atribut3.InputAtributValue = 10;
 
                 Atribut3.SubAtribut1.AtributName = "Short-time";
