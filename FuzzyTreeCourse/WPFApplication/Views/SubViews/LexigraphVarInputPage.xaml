@@ -29,8 +29,8 @@
                 <RowDefinition Height="0.5*"></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="0.25*"></ColumnDefinition>
-                <ColumnDefinition Width="0.25*"></ColumnDefinition>
+                <ColumnDefinition Width="0.35*"></ColumnDefinition>
+                <ColumnDefinition Width="0.4*"></ColumnDefinition>
                 <ColumnDefinition Width="0.4*"></ColumnDefinition>
                 <ColumnDefinition Width="0.25*"></ColumnDefinition>
                 <ColumnDefinition Width="0.25*"></ColumnDefinition>
@@ -42,16 +42,16 @@
                 LegendLocation="Right">
             </lvc:CartesianChart>
 
-            <TextBlock Text="Name of attribute"
+            <TextBlock Text="Name of Attribute"
                        Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
                        Background="DarkOrchid" Opacity="0.7" FontWeight="Black"
                        TextAlignment="Center" Margin="5, 5, 5, 5"/>
-            <TextBox Margin="5, 5, 75, 5" Text="{Binding Caption}" 
+            <TextBox Margin="5, 5, 20, 5" Text="{Binding Caption}" 
                      Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2"
                      FontSize="13" TextAlignment="Center"/>
 
             <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
-            Text="SubAttributes amount"
+            Text="Number of SubAttributes"
             Background="DarkOrchid" Opacity="0.7" FontWeight="Black"
             TextAlignment="Center" Margin="5, 5, 5, 5"/>
 

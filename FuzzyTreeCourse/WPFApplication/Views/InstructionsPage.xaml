@@ -25,9 +25,9 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <TextBlock FontSize="30" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+        <TextBlock FontSize="25" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
                    Margin="10,6,10,10" VerticalAlignment="Center" 
-                   Text="During research such criteria's were picked:" 
+                   Text="During the research conducted the following criteria were picked out:" 
         />
 
         <TextBlock Grid.Row="1" Grid.Column="0" FontSize="20"
@@ -50,8 +50,7 @@
             Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2"
                    FontSize="20"
                    TextWrapping="Wrap" VerticalAlignment="Center"
-                   Text="Be careful when changing SubAttribute parameters in 'Browse linguistic variables' page. 
-                   Database was attentively analyzed and input values were arranged to bounds of attributes provided. Visit reference below to explore database by yourself."
+                   Text="Be careful when changing SubAttribute parameters in 'Browse Linguistic Variables' form! The database was analyzed thoroughly, and corresponding input values were arranged in accordance with bounds of attributes provided. Follow the link shown below to inspect the database on your own."
         />
 
         <TextBox Margin="40, 0, 40, 0" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Background="WhiteSmoke" FontSize="15" TextAlignment="Center">
