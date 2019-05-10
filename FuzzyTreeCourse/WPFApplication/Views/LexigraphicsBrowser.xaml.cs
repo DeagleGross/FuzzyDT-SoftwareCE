@@ -60,13 +60,13 @@ namespace FuzzyTreeWPF.Views
                 {
                     if (lexInputPage.InputAtributValue.Equals(0))
                     {
-                        MessageBox.Show($"Input value of '{lexInputPage.Caption}' atribut is empty. Can not do calculation.");
+                        MessageBox.Show($"Input value of '{lexInputPage.Caption}' Attribute is empty. Can not do calculation.");
                         return false;
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Input value of '{lexInputPage.Caption}' atribut can not be parsed to double. Can not do calculation.");
+                    MessageBox.Show($"Input value of '{lexInputPage.Caption}' Attribute can not be parsed to double. Can not do calculation.");
                     return false;
                 }
             }
@@ -152,7 +152,7 @@ namespace FuzzyTreeWPF.Views
             MessageBox.Show(
                 result == 0
                     ? "Result Effort is 0.0 -> Check your input parameters, they can be out of bounds of SubAttributes values."
-                    : $"Result Effort = {result:F2};");
+                    : $"Result Effort = {result:F2}");
         }
 
         /// <summary>

@@ -51,7 +51,7 @@ namespace FuzzyTreeWPF
             var mainController = ResourcePicker.GetMainController();
 
             if (!mainController.TreeController.IsConstructed)
-                MessageBox.Show("Firstly build a tree by clicking 'Find Result' in 'Browse Lexigraphics Values' page.");
+                MessageBox.Show("Firstly build a tree by clicking 'Find Result' in 'Browse linguistic values' page.");
             else
             {
                 (new FuzzyTreePage()).Show();

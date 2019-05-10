@@ -15,7 +15,6 @@ namespace FuzzyTreeLib.Models
 {
     public class DataLoader
     {
-        private string _path;
         const string Path = "../../../DataSets/kaggleCOCOMO.csv";
         public List<InputValue> InputValues { get; set; }
 
@@ -79,7 +78,6 @@ namespace FuzzyTreeLib.Models
         /// <param name="path"> string path </param>
         public DataLoader(string path)
         {
-            this._path = path;
             this.InputValues = new List<InputValue>();
         }
 
