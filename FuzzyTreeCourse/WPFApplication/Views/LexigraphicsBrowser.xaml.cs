@@ -152,7 +152,7 @@ namespace FuzzyTreeWPF.Views
             MessageBox.Show(
                 result == 0
                     ? "Result Effort is 0.0 -> Check your input parameters, they can be out of bounds of SubAttributes values."
-                    : $"Result Effort = {result:F2}");
+                    : $"Result Effort = {result:F2} man-hours");
         }
 
         /// <summary>
