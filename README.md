@@ -5,9 +5,9 @@ Using C#.
 
 
 ------
-* FuzzyTreeCourse - Solution with console interface
+* FuzzyTreeCourse - Console interface project
 * FuzzyTreeLib - Library with logic
-* WPFApplication - Solution with WPF standart application
+* WPFApplication - WPF standart application project
 
 ##### TODO:
 - fix commentaries and style in FuzzyTreeLib
