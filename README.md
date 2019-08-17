@@ -3,6 +3,13 @@
 HSE 2nd coursework.
 Using C#.
 
+------
+Research is done using these scientific journals:
+- IEEE
+- ACM
+- Springer
+- Wiley
+- Elsevier
 
 ------
 * FuzzyTreeCourse - Console interface project
